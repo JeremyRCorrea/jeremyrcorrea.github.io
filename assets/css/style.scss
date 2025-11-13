@@ -1,0 +1,36 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom navigation styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+nav ul li {
+  margin: 8px 0;
+}
+
+nav ul li a {
+  color: #267CB9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Nested list for sub-items */
+nav ul ul {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+nav ul ul li {
+  font-size: 0.9em;
+  margin: 5px 0;
+}
