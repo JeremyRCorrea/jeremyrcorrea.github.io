@@ -3,34 +3,144 @@
 
 @import "{{ site.theme }}";
 
-/* Custom navigation styles */
-nav ul {
+/* Layout Width Adjustments */
+header {
+  width: 220px;  /* Reduced from 270px */
+}
+
+section {
+  width: 580px;  /* Increased from 500px */
+  float: right;
+}
+
+.wrapper {
+  width: 860px;  /* Total width: 220px + 580px + 60px padding */
+}
+
+/* Custom Navigation Styles */
+.site-nav {
+  margin: 25px 0;
+  padding: 20px 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.site-nav h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+.site-nav ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 0;
 }
 
-nav ul li {
-  margin: 8px 0;
+.site-nav > ul > li {
+  margin: 10px 0;
 }
 
-nav ul li a {
+.site-nav a {
   color: #267CB9;
   text-decoration: none;
   font-weight: 500;
+  font-size: 14px;
+  display: block;
+  padding: 4px 0;
+  transition: color 0.2s ease;
 }
 
-nav ul li a:hover {
+.site-nav a:hover {
+  color: #069;
   text-decoration: underline;
 }
 
-/* Nested list for sub-items */
-nav ul ul {
-  margin-left: 15px;
-  margin-top: 5px;
+.site-nav a.active {
+  color: #222;
+  font-weight: 700;
 }
 
-nav ul ul li {
-  font-size: 0.9em;
-  margin: 5px 0;
+/* Sub-navigation (nested items) */
+.site-nav .sub-nav {
+  margin-left: 15px;
+  margin-top: 8px;
+  padding-left: 10px;
+  border-left: 2px solid #e5e5e5;
+}
+
+.site-nav .sub-nav li {
+  margin: 6px 0;
+}
+
+.site-nav .sub-nav a {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+}
+
+.site-nav .sub-nav a:hover {
+  color: #267CB9;
+}
+
+.site-nav .sub-nav a.active {
+  color: #267CB9;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media print, screen and (max-width: 960px) {
+  div.wrapper {
+    width: auto;
+    margin: 0;
+  }
+  
+  header, section, footer {
+    float: none;
+    position: static;
+    width: auto;
+  }
+  
+  header {
+    padding-right: 320px;
+  }
+  
+  section {
+    border: 1px solid #e5e5e5;
+    border-width: 1px 0;
+    padding: 20px 0;
+    margin: 0 0 20px;
+  }
+  
+  .site-nav {
+    border: none;
+    padding: 10px 0;
+  }
+  
+  .site-nav h3 {
+    font-size: 14px;
+  }
+}
+
+@media print, screen and (max-width: 720px) {
+  body {
+    word-wrap: break-word;
+  }
+  
+  header {
+    padding: 0;
+  }
+  
+  header ul, header p.view {
+    position: static;
+  }
+  
+  pre, code {
+    word-wrap: normal;
+  }
+  
+  .site-nav {
+    margin: 15px 0;
+  }
 }
